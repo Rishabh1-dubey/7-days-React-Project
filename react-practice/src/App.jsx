@@ -56,6 +56,7 @@ function App() {
       </div> */}
 
       {/* Character Counter */}
+      
       {/* <div>
         <h1>Character counter</h1>
         <input value={text}  onChange={(e)=>{setText(e.target.value)}} type="text" />
