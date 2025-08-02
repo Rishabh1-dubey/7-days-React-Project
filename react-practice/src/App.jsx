@@ -86,7 +86,9 @@ function App() {
       <div style={customtheme}>
         <h1 >Custom theme of the my dark mode :{darkMode ? "DarkMode" : "LightMode"}</h1>
 <button onClick={togglethem} >the Mode is :{darkMode?"Dark":"Light"}</button>
+
        
+
       </div>
     </>
   );
