@@ -1,5 +1,9 @@
+// import { useState } from "react";
+// import "./App.css";
+
 import { useState } from "react";
-import "./App.css";
+import CheckboxList from "./components/SelctItem";
+import SelctItem from "./components/SelctItem";
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -17,10 +21,9 @@ function App() {
 
   const customtheme = {
     backgroundColor: darkMode ? "#333" : "#fff",
-      color: darkMode ? 'white':'black',
-      height:300
+    color: darkMode ? "white" : "black",
+    height: 300,
   };
-  
 
   return (
     //Create a counter with Increase, Decrease, and Reset buttons. The counter should not go below 0.
@@ -56,7 +59,7 @@ function App() {
       </div> */}
 
       {/* Character Counter */}
-      
+
       {/* <div>
         <h1>Character counter</h1>
         <input value={text}  onChange={(e)=>{setText(e.target.value)}} type="text" />
@@ -83,15 +86,23 @@ function App() {
 
       {/* Implement a button to toggle between light and dark mode using useState and change background/text color accordingly. */}
 
-      <div style={customtheme}>
+      {/* <div style={customtheme}>
         <h1 >Custom theme of the my dark mode :{darkMode ? "DarkMode" : "LightMode"}</h1>
 <button onClick={togglethem} >the Mode is :{darkMode?"Dark":"Light"}</button>
 
-       
-
-      </div>
+        */}
+        <SelctItem/>
     </>
   );
 }
 
 export default App;
+
+// const App = () => {
+//   return (
+//     <div>
+
+//       <RandomQuotes/>
+//     </div>
+//   )
+// }
