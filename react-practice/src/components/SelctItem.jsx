@@ -1,49 +1,46 @@
+// Multiple Checkboxes (Select/Deselect All)Create a list of checkboxes with an option to Select All / Deselect All. Show which items are selected.
+
 import React, { useState } from "react";
 
+const items = ["Apple", "Banana", "Orange", "Kiwi"];
+
+const [selectedItems, setSelectedItems] = useState([]);
+
+const onHandleChnage = (item) => {
+  if (selectedItems.includes(item) === items.length) {
+    selectedItems.filter((i) => i != item);
+    setSelectedItems([]);
+  } else {
+    setSelectedItems(item);
+  }
+};
+
+const selectAll = () => {
+  if (selectedItems === items.length) {
+    setSelectedItems([]);
+  } else {
+    setSelectedItems(items);
+  }
+};
+
+
 const SelctItem = () => {
-  const item = ["apple", "banana", "kela", "santara"];
-
-  const [selectedItem, setSelctedItem] = useState([]);
-
-  const onChangeSelect = (item) => {
-    if (selectedItem.includes(item)) {
-      setSelctedItem(selectedItem.filter((i) => i !== item));
-    } else {
-      setSelctedItem([...selectedItem, item]);
-    }
-  };
-
-  const selectAll = () => {
-    if (selectedItem.length === item.length) {
-      setSelctedItem([]);
-    } else {
-      setSelctedItem(item);
-    }
-  };
-
   return (
     <div>
-      <h2>React pratice</h2>
+      <h2>Selected item Code</h2>
       <button onClick={selectAll}>
-        {selectedItem.length === item.length ? "select all" : "Disselect all"}
+        {selectAll ? "DisSelect All" : "Select All"}
       </button>
       <ul>
-        {item.map((item) => (
-          <li key={item}>
+        {items.map((item) => {
+          <li>
             <input
-              type="checkbox"
-              checked={selectedItem.includes(item)}
-              onChange={() => onChangeSelect(item)}
+              type="check"
+              checked={onHandleChnage ? "checked" : "unchecked"}
             />
-            {item}
-          </li>
-        ))}
+          </li>;
+        })}
       </ul>
-
-      <h3>Selcted Item</h3>
-      {selectedItem.length >0 ? (
-        <ul>{selectedItem.map(item=><li key={item}>{item}</li>)}</ul>
-      ):(<p>no item seletec</p>)}
     </div>
   );
 };

@@ -2,7 +2,7 @@
 // import "./App.css";
 
 import { useState } from "react";
-import CheckboxList from "./components/SelctItem";
+
 import SelctItem from "./components/SelctItem";
 
 function App() {
@@ -95,6 +95,9 @@ function App() {
     </>
   );
 }
+
+
+
 
 export default App;
 
